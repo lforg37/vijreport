@@ -81,3 +81,4 @@
 \titleformat*{\subsubsection}{}
 \titleformat*{\paragraph}{}
 
+\titlelabel{\thetitle.\quad}
