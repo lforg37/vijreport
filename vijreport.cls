@@ -70,15 +70,36 @@
 }
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
+\RequirePackage{parskip}
 
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
 \renewcommand{\theparagraph}{\roman{paragraph}}
 
-\titleformat*{\section}{}
-\titleformat*{\subsection}{}
-\titleformat*{\subsubsection}{}
-\titleformat*{\paragraph}{}
+\titleformat{\section}[block]{}{\thesection.}{1em}{}
+\titleformat{\subsection}[block]{}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsection} {\leftmargin}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection} {\leftmargin}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\titlelabel{\thetitle.\quad}
+\makeatletter
+\let\xsection\section
+\def\section{\par
+  \leftmargin0\p@
+  \leftskip\leftmargin
+  \@totalleftmargin\leftmargin\linewidth\textwidth
+  \xsection}
+\let\xsubsection\subsection
+\def\subsection{\par
+  \leftmargin20\p@
+  \leftskip\leftmargin
+  \@totalleftmargin\leftmargin\linewidth\dimexpr\textwidth-\leftmargin\relax
+  \xsubsection}
+\let\xsubsubsection\subsubsection
+\def\subsubsection{\par
+  \leftmargin40\p@
+  \leftskip\leftmargin
+  \@totalleftmargin\leftmargin\linewidth\dimexpr\textwidth-\leftmargin\relax
+  \xsubsubsection}
+
