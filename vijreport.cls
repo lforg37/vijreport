@@ -9,7 +9,6 @@
 \RequirePackage{newtxmath,newtxtext}
 
 \LoadClass{article}
-\setcounter{secnumdepth}{4}
 
 \RequirePackage{fancyhdr}
 
@@ -68,9 +67,10 @@
 	\end{tikzpicture}
 \end{titlepage}
 }
+\setcounter{secnumdepth}{4}
+\RequirePackage{parskip}
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
-\RequirePackage{parskip}
 
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -78,12 +78,14 @@
 \renewcommand{\theparagraph}{\roman{paragraph}}
 
 \titleformat{\section}[block]{}{\thesection.}{1em}{}
-\titleformat{\subsection}[block]{}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[block]{}{\thesubsubsection}{1em}{}
+\titleformat{\subsection}[block]{}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}[block]{}{\thesubsubsection.}{1em}{}
+\titleformat{\paragraph}[block]{}{\theparagraph.}{1em}{}
+
 \titlespacing*{\subsection} {\leftmargin}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\subsubsection} {\leftmargin}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\paragraph} {\leftmargin}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\makeatletter
 \let\xsection\section
 \def\section{\par
   \leftmargin0\p@
@@ -102,4 +104,9 @@
   \leftskip\leftmargin
   \@totalleftmargin\leftmargin\linewidth\dimexpr\textwidth-\leftmargin\relax
   \xsubsubsection}
-
+\let\xparagraph\paragraph
+\def\paragraph{\par
+  \leftmargin60\p@
+  \leftskip\leftmargin
+  \@totalleftmargin\leftmargin\linewidth\dimexpr\textwidth-\leftmargin\relax
+  \xparagraph}
