@@ -4,14 +4,13 @@
 \RequirePackage{tikz}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{newtxmath,newtxtext}
 
 \LoadClass{article}
 
 \RequirePackage{fancyhdr}
 
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}
 
 \RequirePackage[top=3.5cm, bottom=3.5cm, right=3cm, left=3cm]{geometry}
 
@@ -77,7 +76,7 @@
 \renewcommand{\thesubsubsection}{\alph{subsubsection}}
 \renewcommand{\theparagraph}{\roman{paragraph}}
 
-\titleformat{\section}[block]{}{\thesection.}{1em}{}
+\titleformat{\section}[block]{\bfseries}{\thesection.}{1em}{}
 \titleformat{\subsection}[block]{}{\thesubsection.}{1em}{}
 \titleformat{\subsubsection}[block]{}{\thesubsubsection.}{1em}{}
 \titleformat{\paragraph}[block]{}{\theparagraph.}{1em}{}
