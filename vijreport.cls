@@ -12,6 +12,11 @@
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
 
+\RequirePackage{xeCJK}
+\setCJKmainfont{IPAMincho}
+\setCJKmonofont{IPAMincho}
+\setCJKsansfont{IPAPGothic}
+
 \RequirePackage[top=3.5cm, bottom=3.5cm, right=3cm, left=3cm]{geometry}
 
 \fancyhf{} % sets both header and footer to nothing
